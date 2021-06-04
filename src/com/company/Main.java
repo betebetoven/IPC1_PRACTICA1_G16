@@ -7,7 +7,7 @@ public class Main {
     public static   Scanner n = new Scanner(System.in);
     public static void main(String[] args) {
 
-	guarda("C:\\Users\\Alberto\\Desktop\\k.txt");
+	guarda("Ruta");
 	convertir(0);
 
     }

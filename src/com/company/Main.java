@@ -89,6 +89,39 @@ public class Main {
 
     }
 //Hola :)
+    public static void funciondeabel()
+    {
+        int [][] matrizA ={{4,5,8},{2,6,7,},{2,4,3}};
+        int [][] matrizB ={{6,7,2},{7,3,1,},{5,1,8}};
+        int [][] matrizC ={{2,3},{8,1}};
+        int i = 0, j = 0;
+        int op = 0;
+
+        Scanner leer = new Scanner(System.in);
+
+        do{
+            System.out.println("Ingrese la matriz para obtener su determinante. ");
+            System.out.println("Solo se aceptan matrices maximas de 3X3.\n");
+
+
+            if(i>3 || j>3){
+                System.out.println("Es invalido una matriz mayor de 3X3");
+
+            }else if(i != j){
+                System.out.println("Las dimensiones de la matriz son diferentes");
+
+            }else if(i==3 && j==3){
+                for (i = 0; i <= 2; i++) {
+                    for (j = 0; j <= 2; j++) {
+                        System.out.print(matrizA[i][j] + " ");
+                    }
+                    System.out.println();
+                }
+            }
+            System.out.println("Si desea intentarlo de nuevo ingrese 1 y 0 para salir: ");
+            op=leer.nextInt();
+        }while(op != 0);
+    }
 
 }
 

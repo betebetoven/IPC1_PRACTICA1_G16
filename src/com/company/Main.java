@@ -6,10 +6,11 @@ import java.util.Scanner;
 public class Main {
 
     public static   Scanner n = new Scanner(System.in);
-    public static String g;
+    public static String g="B";
     public static void main(String[] args) {
+    Menu();
 
-        guarda("Ruta");
+        guarda("C:\\Users\\Usuario\\Documents\\IPC1\\Vacas\\p.txt");
         convertir(g);
         System.out.println("Hola mundo");
     }
@@ -131,6 +132,47 @@ public class Main {
             System.out.println("Si desea intentarlo de nuevo ingrese 1 y 0 para salir: ");
             op=leer.nextInt();
         }while(op != 0);
+    }
+    //Menu
+    public static void Menu(){
+        // bandera
+        boolean flag = true;
+        do {
+            System.out.println(" ------------MenuñN------------- ");
+            System.out.println("║1.Ingrese Matriz                 ║");
+            System.out.println("║2.Suma                           ║");
+            System.out.println("║3.Resta                          ║");
+            System.out.println("║4.Multiplicacion          ║");
+            System.out.println("║5.SALIR                     ║");
+            System.out.println(" ----------------------------- ");
+
+            String opcion = n .nextLine();
+            switch (opcion) {
+                case "1":
+
+                    break;
+                case "2":
+
+
+                    break;
+                case "3":
+
+                    break;
+                case "4":
+
+
+
+                case "5":
+                    flag = false;
+                    break;
+                default:
+
+
+            }
+
+        } while (flag);
+
+
     }
     //XD xD XD 
 

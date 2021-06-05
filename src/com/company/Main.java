@@ -174,37 +174,54 @@ public class Main {
 
     //Hola :)
     public static void funciondeabel() {
-        int[][] matrizA = {{4, 5, 8}, {2, 6, 7,}, {2, 4, 3}};
-        int[][] matrizB = {{6, 7, 2}, {7, 3, 1,}, {5, 1, 8}};
-        int[][] matrizC = {{2, 3}, {8, 1}};
+        int [][] matrizA ={{4,5,8},{2,6,7,},{2,4,3}};
+        int [][] matrizB ={{6,7,2},{7,3,1,},{5,1,8}};
+        int [][] matrizC ={{2,3},{8,1}};
         int i = 0, j = 0;
-        int op = 0;
+        int op = 0, determinante = 0;
+        int MCorden = 0;
 
         Scanner leer = new Scanner(System.in);
 
-        do {
+        do{
             System.out.println("Ingrese la matriz para obtener su determinante. ");
-            System.out.println("Solo se aceptan matrices maximas de 3X3.\n");
+            System.out.println("Solo se aceptan matrices cuadradas maximas de orden 3.\n");
+            System.out.println("Cual es el orden de la matriz cuadrada?: \n");
+            MCorden = leer.nextInt();
 
+                switch (MCorden){
+                    case 1: determinante=matrizB[0][0];
+                        System.out.println("El determinante es: " + determinante);
 
-            if (i > 3 || j > 3) {
-                System.out.println("Es invalido una matriz mayor de 3X3");
+                    case 2:
+                        for (i = 0; i <= 2; i++) {
+                            for (j = 0; j <= 2; j++) {
+                                System.out.print(matrizB[i][j] + " ");
+                            }
+                        System.out.println();
+                        }
+                        determinante=((matrizB[0][0]*matrizB[1][1])-(matrizB[1][0]*matrizB[0][1]));
+                        System.out.println("El determinante es: " + determinante);
+                    case 3:
+                        for (i = 0; i <= 2; i++) {
+                            for (j = 0; j <= 2; j++) {
+                                System.out.print(matrizB[i][j] + " ");
+                            }
+                            System.out.println();
+                        }
+                        determinante = ((matrizB[0][0])*(matrizB[1][1])*(matrizB[2][2])+(matrizB[1][0])*(matrizB[2][1])*
+                                (matrizB[0][2])+(matrizB[2][0])*(matrizB[0][1])*(matrizB[1][2]))
+                                -((matrizB[2][0])*(matrizB[1][1])*(matrizB[0][2])+(matrizB[1][0])*(matrizB[0][1])*(matrizB[2][2])
+                                +(matrizB[0][0])*(matrizB[2][1])*(matrizB[1][2]));
 
-            } else if (i != j) {
-                System.out.println("Las dimensiones de la matriz son diferentes");
-
-            } else if (i == 3 && j == 3) {
-                for (i = 0; i <= 2; i++) {
-                    for (j = 0; j <= 2; j++) {
-                        System.out.print(matrizA[i][j] + " ");
-                    }
-                    System.out.println();
+                        System.out.println("El determinante es: " + determinante);
+                    default:
                 }
-            }
             System.out.println("Si desea intentarlo de nuevo ingrese 1 y 0 para salir: ");
-            op = leer.nextInt();
-        } while (op != 0);
+            op=leer.nextInt();
+        }while(op != 0);
     }
+}
 
     public static void trns() {
         System.out.println("ingrese la primera matriz");

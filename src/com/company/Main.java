@@ -98,11 +98,6 @@ public class Main {
         return prd;
     }
 
-    public static void relleno()
-    {
-        System.out.print("hoisg");
-
-    }
 //Hola :)
     public static void funciondeabel()
     {

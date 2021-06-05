@@ -18,7 +18,69 @@ public class Main {
     public static Double[][] A;
     public static  Double[][]B;
     public static Double[][] R;
+    public static void Menú (){
+    Scanner sc = new Scanner(System.in);
+    int opcion=0;
+        do{
+        try{
+            System.out.println("--- MENU PRINCIPAL ---");
+            System.out.println("1. Cargar Matrices");
+            System.out.println("2. Sumar Matrices");
+            System.out.println("3. Restar Matrices");
+            System.out.print("4. Multiplicar Matriz por Matriz ");
+            System.out.println("5. Multiplicar Matriz por Número");
+            System.out.println("6. Dividir Matrices");
+            System.out.println("7. Potencia de Matrices");
+            System.out.println("8. Inversa de la Matriz");
+            System.out.println("9. Determinante de una Matriz");
+            System.out.println("10 Traspuesta de una Matriz");
+            System.out.println("11.Salir");
+            opcion = sc.nextInt();
+            switch(opcion){
+                case 1:
 
+                    break;
+                case 2:
+
+                    break;
+                case 3:
+
+                    break;
+                case 4:
+
+                    break;
+                case 5:
+
+                    break;
+                case 6:
+
+                    break;
+                case 7:
+
+                    break;
+                case 8:
+
+                    break;
+                case 9:
+
+                    break;
+                case 10:
+
+                    break;
+
+                case 11:
+                    System.out.println("Gracias por utilizar el programa");
+                    break;
+                default:
+                    System.out.println("Opcion no valida");
+                    break;
+            }
+        }catch(Exception e)
+        {
+            System.out.println(e.toString());
+        }
+    }while(opcion != 11);
+}
 
     public static String recibe(String pathname) {
         File archivo = null;

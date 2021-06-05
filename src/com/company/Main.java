@@ -1,22 +1,24 @@
 package com.company;
-import javax.xml.bind.SchemaOutputResolver;
+//import javax.xml.bind.SchemaOutputResolver;
 import java.io. *;
 import java.util.Scanner;
 
 public class Main {
 
     public static   Scanner n = new Scanner(System.in);
-    public static void main(String[] args) {
-
-	guarda("Ruta");
-	convertir(0);
-        System.out.println("Hola mundo");
-    }
     public static  String[] todo = new String[26];
     public static  String[][] todoo = new String[26][2];
     public static Double[][] A;
     public static  Double[][]B;
     public static Double[][] R;
+    public static String g = "A";
+    public static void main(String[] args) {
+
+	guarda("Ruta");
+	convertir(g);
+        System.out.println("Hola mundo");
+    }
+
 
     public static String recibe(String pathname) {
         File archivo = null;
@@ -64,14 +66,25 @@ public class Main {
 
     }
 
-    public static Double[][] convertir(int p)//devuelve una matriz de dos dimensiones
+    public static Double[][] convertir(String g)//devuelve una matriz de dos dimensiones
     {
+        int p=0;
+        for (int i = 0; i < 26; i++)
+            try {
+                if (todoo[i][0].equals(g))
+                    p = i;
+            }
+            catch (Exception e)
+            {
+                i = 26;
+            }
+
 
         String[] cna = todoo[p][1].trim().split(";");
-            String[][] pr = new String[cna.length][(cna[0].length()+1)/2];
+        String[][] pr = new String[cna.length][(cna[0].length()+1)/2];
         Double[][] prd = new Double[cna.length][(cna[0].length()+1)/2];
-            for (int i = 0; i < cna.length; i++)
-                pr[i] = cna[i].trim().split(",");
+        for (int i = 0; i < cna.length; i++)
+            pr[i] = cna[i].trim().split(",");
         System.out.println(todoo[p][0]);
         for (int i = 0; i < cna.length; i++)
         {
@@ -82,7 +95,7 @@ public class Main {
             }
         }
         System.out.println("|"+prd[0][0]+"|");
-            return prd;
+        return prd;
     }
     public static void relleno()
     {

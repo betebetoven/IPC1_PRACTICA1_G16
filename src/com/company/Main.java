@@ -6,12 +6,12 @@ import java.util.Scanner;
 public class Main {
 
     public static   Scanner n = new Scanner(System.in);
-    public static String g="C";
+    public static String g="B";
     public static void main(String[] args) {
+    Menu();
 
-        guarda("C:\\Users\\Alberto\\Downloads\\p.txt");
-        suma();
-        //convertir(g);
+        guarda("C:\\Users\\Usuario\\Documents\\IPC1\\Vacas\\p.txt");
+        convertir(g);
         System.out.println("Hola mundo");
     }
     public static  String[] todo = new String[26];
@@ -19,7 +19,69 @@ public class Main {
     public static Double[][] A;
     public static  Double[][]B;
     public static Double[][] R;
+    public static void Menú (){
+    Scanner sc = new Scanner(System.in);
+    int opcion=0;
+        do{
+        try{
+            System.out.println("--- MENU PRINCIPAL ---");
+            System.out.println("1. Cargar Matrices");
+            System.out.println("2. Sumar Matrices");
+            System.out.println("3. Restar Matrices");
+            System.out.print("4. Multiplicar Matriz por Matriz ");
+            System.out.println("5. Multiplicar Matriz por Número");
+            System.out.println("6. Dividir Matrices");
+            System.out.println("7. Potencia de Matrices");
+            System.out.println("8. Inversa de la Matriz");
+            System.out.println("9. Determinante de una Matriz");
+            System.out.println("10 Traspuesta de una Matriz");
+            System.out.println("11.Salir");
+            opcion = sc.nextInt();
+            switch(opcion){
+                case 1:
 
+                    break;
+                case 2:
+
+                    break;
+                case 3:
+
+                    break;
+                case 4:
+
+                    break;
+                case 5:
+
+                    break;
+                case 6:
+
+                    break;
+                case 7:
+
+                    break;
+                case 8:
+
+                    break;
+                case 9:
+
+                    break;
+                case 10:
+
+                    break;
+
+                case 11:
+                    System.out.println("Gracias por utilizar el programa");
+                    break;
+                default:
+                    System.out.println("Opcion no valida");
+                    break;
+            }
+        }catch(Exception e)
+        {
+            System.out.println(e.toString());
+        }
+    }while(opcion != 11);
+}
 
     public static String recibe(String pathname) {
         File archivo = null;
@@ -133,42 +195,50 @@ public class Main {
             op=leer.nextInt();
         }while(op != 0);
     }
-    //XD xD XD
+    //Menu
+    public static void Menu(){
+        // bandera
+        boolean flag = true;
+        do {
+            System.out.println(" ------------MenuñN------------- ");
+            System.out.println("║1.Ingrese Matriz                 ║");
+            System.out.println("║2.Suma                           ║");
+            System.out.println("║3.Resta                          ║");
+            System.out.println("║4.Multiplicacion          ║");
+            System.out.println("║5.SALIR                     ║");
+            System.out.println(" ----------------------------- ");
+
+            String opcion = n .nextLine();
+            switch (opcion) {
+                case "1":
+
+                    break;
+                case "2":
 
 
-    public static void trns ()
-    {
-        System.out.println("ingrese la primera matriz");
-        String Letra = n.nextLine();
-        if (Letra.equalsIgnoreCase("r"))
-            A = R;
-        else
-            A = convertir(Letra);
+                    break;
+                case "3":
 
-        System.out.println("ingrese la primera matriz");
-        Letra = n.nextLine();
-        if (Letra.equalsIgnoreCase("r"))
-            B = R;
-        else
-            B = convertir(Letra);
-    }
-    public static void suma()
-    {
+                    break;
+                case "4":
 
-        trns();
-        R = new Double[A[0].length][A[0].length];
-        for (int i = 0; i < 3; i++)
-        {
 
-            System.out.println();
-            for (int k = 0; k < 3; k++) {
 
-                R[i][k] = A[i][k]+B[i][k];
-                System.out.print(R[i][k] + "  ");
-                // System.out.print(A[i][k]+" + "+B[i][k]+" = "+R[i][k] + "  ");
+                case "5":
+                    flag = false;
+                    break;
+                default:
+
+
             }
-        }
+
+        } while (flag);
+
+
     }
+    //XD xD XD 
+
+
 
 }
 

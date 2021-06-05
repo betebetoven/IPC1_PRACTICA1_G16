@@ -1,5 +1,4 @@
 package com.company;
-import javax.xml.bind.SchemaOutputResolver;
 import java.io. *;
 import java.util.Scanner;
 
@@ -7,10 +6,10 @@ public class Main {
 
     public static   Scanner n = new Scanner(System.in);
     public static void main(String[] args) {
+        Menu();
+	//guarda("Ruta");
+	//convertir(0);
 
-	guarda("Ruta");
-	convertir(0);
-        System.out.println("Hola mundo");
     }
     public static  String[] todo = new String[26];
     public static  String[][] todoo = new String[26][2];
@@ -18,6 +17,68 @@ public class Main {
     public static  Double[][]B;
     public static Double[][] R;
 
+    public static void Menu (){
+    Scanner sc = new Scanner(System.in);
+    int opcion=0;
+        do{
+        try{
+            System.out.println("--- MENU PRINCIPAL ---");
+            System.out.println("1. Cargar Matriz");
+            System.out.println("2. Sumar Matrices");
+            System.out.println("3. Restar Matrices");
+            System.out.println("4. Multiplicar Matrices");
+            System.out.println("5. Multiplicar Matrices por un número");
+            System.out.println("6.Dividir Matrices");
+            System.out.println("7. Transpuesta de una matriz");
+            System.out.println("8. Matriz Inversa");
+            System.out.println("9. Potencia de una Matriz");
+            System.out.println("10. Determinante de una matriz");
+            System.out.print("Ingresar la opcion que desea: ");
+            opcion = sc.nextInt();
+            switch(opcion){
+                case 1:
+
+                    break;
+                case 2:
+
+                    break;
+                case 3:
+
+                    break;
+                case 4:
+
+                    break;
+                case 5:
+
+                    break;
+                case 6:
+
+                    break;
+                case 7:
+
+                    break;
+                case 8:
+
+                    break;
+                case 9:
+
+                    break;
+                case 10:
+
+                    break;
+                case 11:
+                    System.out.println("Gracias por utilizar el programa");
+                    break;
+                default:
+                    System.out.println("Opcion no valida");
+                    break;
+            }
+        }catch(Exception e)
+        {
+            System.out.println(e.toString());
+        }
+    }while(opcion != 11);
+}
     public static String recibe(String pathname) {
         File archivo = null;
         FileReader fr = null;

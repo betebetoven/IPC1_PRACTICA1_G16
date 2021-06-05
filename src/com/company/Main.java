@@ -1,15 +1,17 @@
 package com.company;
+
 import java.io. *;
 import java.util.Scanner;
 
 public class Main {
 
     public static   Scanner n = new Scanner(System.in);
+    public static String g;
     public static void main(String[] args) {
-        Menu();
-	//guarda("Ruta");
-	//convertir(0);
 
+        guarda("Ruta");
+        convertir(g);
+        System.out.println("Hola mundo");
     }
     public static  String[] todo = new String[26];
     public static  String[][] todoo = new String[26][2];
@@ -17,68 +19,7 @@ public class Main {
     public static  Double[][]B;
     public static Double[][] R;
 
-    public static void Menu (){
-    Scanner sc = new Scanner(System.in);
-    int opcion=0;
-        do{
-        try{
-            System.out.println("--- MENU PRINCIPAL ---");
-            System.out.println("1. Cargar Matriz");
-            System.out.println("2. Sumar Matrices");
-            System.out.println("3. Restar Matrices");
-            System.out.println("4. Multiplicar Matrices");
-            System.out.println("5. Multiplicar Matrices por un número");
-            System.out.println("6.Dividir Matrices");
-            System.out.println("7. Transpuesta de una matriz");
-            System.out.println("8. Matriz Inversa");
-            System.out.println("9. Potencia de una Matriz");
-            System.out.println("10. Determinante de una matriz");
-            System.out.print("Ingresar la opcion que desea: ");
-            opcion = sc.nextInt();
-            switch(opcion){
-                case 1:
 
-                    break;
-                case 2:
-
-                    break;
-                case 3:
-
-                    break;
-                case 4:
-
-                    break;
-                case 5:
-
-                    break;
-                case 6:
-
-                    break;
-                case 7:
-
-                    break;
-                case 8:
-
-                    break;
-                case 9:
-
-                    break;
-                case 10:
-
-                    break;
-                case 11:
-                    System.out.println("Gracias por utilizar el programa");
-                    break;
-                default:
-                    System.out.println("Opcion no valida");
-                    break;
-            }
-        }catch(Exception e)
-        {
-            System.out.println(e.toString());
-        }
-    }while(opcion != 11);
-}
     public static String recibe(String pathname) {
         File archivo = null;
         FileReader fr = null;
@@ -125,14 +66,25 @@ public class Main {
 
     }
 
-    public static Double[][] convertir(int p)//devuelve una matriz de dos dimensiones
+    public static Double[][] convertir(String g)//devuelve una matriz de dos dimensiones
     {
+        int p=0;
+        for (int i = 0; i < 26; i++)
+            try {
+                if (todoo[i][0].equalsIgnoreCase(g))
+                    p = i;
+            }
+            catch (Exception e)
+            {
+                i = 26;
+            }
+
 
         String[] cna = todoo[p][1].trim().split(";");
-            String[][] pr = new String[cna.length][(cna[0].length()+1)/2];
+        String[][] pr = new String[cna.length][(cna[0].length()+1)/2];
         Double[][] prd = new Double[cna.length][(cna[0].length()+1)/2];
-            for (int i = 0; i < cna.length; i++)
-                pr[i] = cna[i].trim().split(",");
+        for (int i = 0; i < cna.length; i++)
+            pr[i] = cna[i].trim().split(",");
         System.out.println(todoo[p][0]);
         for (int i = 0; i < cna.length; i++)
         {
@@ -143,14 +95,10 @@ public class Main {
             }
         }
         System.out.println("|"+prd[0][0]+"|");
-            return prd;
+        return prd;
     }
-    public static void relleno()
-    {
-        System.out.print("hoisg");
 
-    }
-//Hola :)
+    //Hola :)
     public static void funciondeabel()
     {
         int [][] matrizA ={{4,5,8},{2,6,7,},{2,4,3}};
@@ -184,6 +132,9 @@ public class Main {
             op=leer.nextInt();
         }while(op != 0);
     }
+    //XD xD XD 
+
+
 
 }
 

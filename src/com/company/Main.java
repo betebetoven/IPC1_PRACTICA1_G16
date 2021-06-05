@@ -6,11 +6,12 @@ import java.util.Scanner;
 public class Main {
 
     public static   Scanner n = new Scanner(System.in);
-    public static String g;
+    public static String g="C";
     public static void main(String[] args) {
 
-        guarda("Ruta");
-        convertir(g);
+        guarda("C:\\Users\\Alberto\\Downloads\\p.txt");
+        suma();
+        //convertir(g);
         System.out.println("Hola mundo");
     }
     public static  String[] todo = new String[26];
@@ -132,9 +133,42 @@ public class Main {
             op=leer.nextInt();
         }while(op != 0);
     }
-    //XD xD XD 
+    //XD xD XD
 
 
+    public static void trns ()
+    {
+        System.out.println("ingrese la primera matriz");
+        String Letra = n.nextLine();
+        if (Letra.equalsIgnoreCase("r"))
+            A = R;
+        else
+            A = convertir(Letra);
+
+        System.out.println("ingrese la primera matriz");
+        Letra = n.nextLine();
+        if (Letra.equalsIgnoreCase("r"))
+            B = R;
+        else
+            B = convertir(Letra);
+    }
+    public static void suma()
+    {
+
+        trns();
+        R = new Double[A[0].length][A[0].length];
+        for (int i = 0; i < 3; i++)
+        {
+
+            System.out.println();
+            for (int k = 0; k < 3; k++) {
+
+                R[i][k] = A[i][k]+B[i][k];
+                System.out.print(R[i][k] + "  ");
+                // System.out.print(A[i][k]+" + "+B[i][k]+" = "+R[i][k] + "  ");
+            }
+        }
+    }
 
 }
 

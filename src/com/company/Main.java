@@ -8,7 +8,8 @@ public class Main {
     public static   Scanner n = new Scanner(System.in);
 
     public static void main(String[] args) {
-        guarda("C:\\Users\\Alberto\\Downloads\\p.txt");
+
+        guarda("C:\\Users\\Usuario\\Documents\\IPC1\\Vacas\\p.txt");
         Menú();
 
 
@@ -20,6 +21,8 @@ public class Main {
     public static Double[][] A;
     public static  Double[][]B;
     public static Double[][] R;
+
+    //Menu
     public static void Menú (){
         Scanner sc = new Scanner(System.in);
         int opcion=0;
@@ -63,6 +66,7 @@ public class Main {
 
                         break;
                     case 8:
+                        Inversa();
 
                         break;
                     case 9:
@@ -248,6 +252,125 @@ public class Main {
             }
         }
         System.out.println();
+    }
+    //Matriz Inversa
+    public static void Inversa(){
+        System.out.println("ingrese la primera matriz");
+        String Letra = n.nextLine();
+        if (Letra.equalsIgnoreCase("r"))
+            A = R;
+        else
+            A = convertir(Letra);
+
+            fInversa(A);
+
+
+
+
+
+    }
+    public static void fInversa(Double Matriz[][]) {
+        R = new Double[Matriz[0].length][Matriz[0].length];
+        //Verificar se es una Matriz Cuadrada
+        int n = Matriz.length;
+        int m = Matriz[0].length;
+        if (n != m) {
+            System.out.println("No  es una Matriz Cuadrada ");
+
+            return;
+
+        } else {
+
+            //Matriz IDENTIDAD
+            Double identidad[][] = new Double[n][n];
+            for (int i = 0; i < identidad.length; i++) {
+                for (int j = 0; j< identidad[0].length; j++){
+                    identidad[i][j] = 0.0;
+                }
+
+
+
+            }
+
+            for (int i = 0; i < identidad.length; i++) {
+
+                identidad[i][i] = 1.0;
+
+            }
+            imprimirDouble(identidad);
+            /*
+            //Imprimir matriz identidad
+            System.out.println("----Matriz Identida*----");
+            //Pasar a double la matriz identidad
+            imprimirDouble(identidad);
+            System.out.println("------------------------*");
+             */
+
+            //Matriz que se va a invertir
+            System.out.println("Matriz a Invertir ");
+            //Pasando a double la matriz que se va a invertr
+            Double a[][] = (Matriz);
+            //imprimri matriz que se va a invertir
+            imprimirDouble(a);
+            System.out.println("-----------------------------*");
+            //Procedimiento invertir matriz
+
+            //auxiliar nos va a ayudar a guardar valores
+            double aux;
+            double pivote;
+            //pivote para las operaciones entre filas y columnas
+
+            for (int i = 0; i < n; i++) {
+                // pivote para reducir a 0 los datos arriba y abajo
+                pivote = a[i][i];
+                for (int k = 0; k < n; k++) {
+                    //convirtiendo pivote a 1 y aplicar en toda la fila
+                    a[i][k] = a[i][k] / pivote;
+                    // se aplica tambien a la matriz identiad
+                    identidad[i][k] = identidad[i][k] / pivote;
+
+                }
+
+                /// convertir a 0 todo lo que hay abajo y arriba del pivote
+                for (int j = 0; j < n; j++) {
+                    //condicional si i no es igual a j para saber que no esta en la
+                    //diagonal
+                    if (i != j) {
+                        // aux es igual al pivote
+                        aux = a[j][i];
+
+                        for (int k = 0; k < n; k++) {
+
+                            // formula F-aux*F
+                            //se multiplicacn las dos matrices para el cambio
+                            a[j][k] = a[j][k] - aux * a[i][k];
+                            //La matriz identidad sera la Inversa
+                            identidad[j][k] = identidad[j][k] - aux * identidad[i][k];
+
+                        }
+                    }
+                }
+
+            }
+
+            //Matriz inversa que seria la identida
+            System.out.println("-MATRIZ INVERSA ");
+            R=identidad;
+            imprimirDouble(identidad);
+            System.out.println("---------------------------");
+            //La respuesta va ser igual a la matriz identidad por el cambio
+
+        }
+
+
+    }
+    public static void imprimirDouble(Double  A[][]) {
+        for (int i = 0; i < A.length; i++) {
+            for (int j = 0; j < A[0].length; j++) {
+                System.out.print(A[i][j] + " ");
+            }
+            System.out.println("");
+        }
     }
 
 

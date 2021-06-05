@@ -9,8 +9,8 @@ public class Main {
     public static String g;
     public static void main(String[] args) {
 
-	guarda("Ruta");
-	convertir(g);
+        guarda("Ruta");
+        convertir(g);
         System.out.println("Hola mundo");
     }
     public static  String[] todo = new String[26];
@@ -71,7 +71,7 @@ public class Main {
         int p=0;
         for (int i = 0; i < 26; i++)
             try {
-                if (todoo[i][0].equals(g))
+                if (todoo[i][0].equalsIgnoreCase(g))
                     p = i;
             }
             catch (Exception e)
@@ -98,7 +98,7 @@ public class Main {
         return prd;
     }
 
-//Hola :)
+    //Hola :)
     public static void funciondeabel()
     {
         int [][] matrizA ={{4,5,8},{2,6,7,},{2,4,3}};

@@ -77,7 +77,7 @@ public class Main {
 
                         break;
                     case 9:
-
+                        Determinante();
                         break;
                     case 10:
 
@@ -173,61 +173,37 @@ public class Main {
     }
 
     //Hola :)
-    public static void funciondeabel() {
-       int [][] matrizA ={{4,5,8},{2,6,7,},{2,4,3}};
-        int [][] matrizB ={{6,7,2},{7,3,1,},{5,1,8}};
-        int [][] matrizC ={{2,3},{8,1}};
-        int i, j;
-        int op = 0, determinante = 0;
-        int MCorden = 0;
+    public static void Determinante() {
+       double determinante = 0;
+		System.out.println("ingrese la matriz cuadrada no mayor de orden 3");
+		String Letra = n.nextLine();
+		if (Letra.equalsIgnoreCase("r")) {
+			A = R;
+		} else {
+			A = convertir(Letra);
+		}
+		if(A.length > 3 && A[0].length > 3 || A.length < 1 && A[0].length < 1){
+			System.out.println("ERROR: La matriz no es del grado permitido. ");
+		}else {
+			if (A.length == 3 && A[0].length == 3) {
+				determinante = ((A[0][0]) * (A[1][1]) * (A[2][2]) + (A[1][0]) * (A[2][1]) *
+						(A[0][2]) + (A[2][0]) * (A[0][1]) * (A[1][2]))
+						- ((A[2][0]) * (A[1][1]) * (A[0][2]) + (A[1][0]) * (A[0][1]) * (A[2][2])
+						+ (A[0][0]) * (A[2][1]) * (A[1][2]));
 
-        Scanner leer = new Scanner(System.in);
+				System.out.println("El determinante es: " + determinante);
 
-        do{
-            System.out.println("Ingrese la matriz para obtener su determinante. ");
-            System.out.println("Solo se aceptan matrices cuadradas maximas de orden 3.\n");
-            System.out.println("Cual es el orden de la matriz cuadrada?: ");
-            MCorden = leer.nextInt();
+			} else if (A.length == 2 && A[0].length == 2) {
+				determinante = ((A[0][0] * A[1][1]) - (A[1][0] * A[0][1]));
+				System.out.println("El determinante es: " + determinante);
 
-            if(MCorden>0 && MCorden<4){
-                switch (MCorden) {
-                    case 1:
-                        determinante = matrizB[0][0];
-                        System.out.println("El determinante es: " + determinante);
+			} else if (A.length == 1 && A[0].length == 1) {
+				determinante = A[0][0];
+				System.out.println("El determinante es: " + determinante);
 
-                    case 2:
-                        for (i = 0; i <= 2; i++) {
-                            for (j = 0; j <= 2; j++) {
-                                System.out.print(matrizB[i][j] + " ");
-                            }
-                            System.out.println();
-                        }
-                        determinante = ((matrizB[0][0] * matrizB[1][1]) - (matrizB[1][0] * matrizB[0][1]));
-                        System.out.println("El determinante es: " + determinante);
-                    case 3:
-                        for (i = 0; i <= 2; i++) {
-                            for (j = 0; j <= 2; j++) {
-                                System.out.print(matrizB[i][j] + " ");
-                            }
-                            System.out.println();
-                        }
-                        determinante = ((matrizB[0][0]) * (matrizB[1][1]) * (matrizB[2][2]) + (matrizB[1][0]) * (matrizB[2][1]) *
-                                (matrizB[0][2]) + (matrizB[2][0]) * (matrizB[0][1]) * (matrizB[1][2]))
-                                - ((matrizB[2][0]) * (matrizB[1][1]) * (matrizB[0][2]) + (matrizB[1][0]) * (matrizB[0][1]) * (matrizB[2][2])
-                                + (matrizB[0][0]) * (matrizB[2][1]) * (matrizB[1][2]));
-
-                        System.out.println("El determinante es: " + determinante);
-                    default:
-                }
-            }
-            else{
-                System.out.println("La matriz cuadrada esta fuera del grado permitido.\n");
-            }
-            System.out.println("Si desea intentarlo de nuevo ingrese 1 y 0 para salir: ");
-            op=leer.nextInt();
-        }while(op != 0);
-    }
-}
+			}
+		}
+	}
 
 
     public static void trns() {

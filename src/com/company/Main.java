@@ -1,6 +1,7 @@
 package com.company;
 
 import java.io. *;
+import java.sql.SQLOutput;
 import java.util.Scanner;
 
 public class Main {
@@ -41,14 +42,17 @@ public class Main {
 
                         break;
                     case 2:
+                        System.out.printf("SUMA");
                         suma();
 
                         break;
                     case 3:
+                        System.out.println("RESTA");
                         resta();
 
                         break;
                     case 4:
+                        System.out.println("MULTIPLICACION");
                         System.out.println("ingrese la primera matriz");
                         String Letra = n.nextLine();
                         if (Letra.equalsIgnoreCase("r"))
@@ -68,7 +72,21 @@ public class Main {
 
                         break;
                     case 6:
+                        System.out.println("----------Divicion---------------");
+                                System.out.println("ingrese la segunda matriz" );
+                         Letra = n.nextLine();
+                        if (Letra.equalsIgnoreCase("r"))
+                            A = R;
+                        else
+                            A = convertir(Letra);
 
+                        System.out.println("ingrese la segunda matriz" );
+                        Letra = n.nextLine();
+                        if (Letra.equalsIgnoreCase("r"))
+                            B = R;
+                        else
+                            B = convertir(Letra);
+                        Divicion(A,B);
                         break;
                     case 7:
 
@@ -490,6 +508,37 @@ public class Main {
 
 
     }
+
+    //Divicion
+    public static void Divicion(Double A[][], Double B[][]) {
+        //Pasar a double la matriz DIVIDENDO
+        Double respuesta[][];
+        System.out.println("Matriz Dividendo");
+        System.out.println("------------------");
+        imprimirDouble(A);
+        System.out.println("------------------");
+        Double a[][] = (A);
+        //MatriZ DIVISORA
+        System.out.println("-Matriz Divisora--");
+        System.out.println("-------------------------------");
+        imprimirDouble(B);
+        System.out.println("------------------------------");
+        //INVERSA de B
+        System.out.println("OBTENIENDO INVERSA DE MATRIZ DIVISORA ");
+
+        System.out.println("Inversa de Matriz Divisora");
+        System.out.println("--------------------------------------------");
+        fInversa(B);
+        Double b[][] = R;
+
+        System.out.println("-------------------------------------");
+        //Multiplicacion para la divicion
+        System.out.println("----Respuesta Divicion-------");
+         Multiplicacion(a,b);
+        System.out.println("-----------------------------------------------");
+
+    }
+
 
 }
 

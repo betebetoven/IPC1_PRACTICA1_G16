@@ -1,6 +1,6 @@
 package com.company;
 
-import java.io. *;
+import java.io.*;
 import java.sql.SQLOutput;
 import java.util.Scanner;
 
@@ -66,27 +66,27 @@ public class Main {
                             B = R;
                         else
                             B = convertir(Letra);
-                        Multiplicacion(A,B);
+                        Multiplicacion(A, B);
                         break;
                     case 5:
 
                         break;
                     case 6:
                         System.out.println("----------Divicion---------------");
-                                System.out.println("ingrese la segunda matriz" );
-                         Letra = n.nextLine();
+                        System.out.println("ingrese la segunda matriz");
+                        Letra = n.nextLine();
                         if (Letra.equalsIgnoreCase("r"))
                             A = R;
                         else
                             A = convertir(Letra);
 
-                        System.out.println("ingrese la segunda matriz" );
+                        System.out.println("ingrese la segunda matriz");
                         Letra = n.nextLine();
                         if (Letra.equalsIgnoreCase("r"))
                             B = R;
                         else
                             B = convertir(Letra);
-                        Divicion(A,B);
+                        Divicion(A, B);
                         break;
                     case 7:
 
@@ -99,6 +99,15 @@ public class Main {
 
                         break;
                     case 10:
+                        System.out.println("----Transpuesta -----------");
+                        System.out.println("ingrese la primera matriz");
+                        Letra = n.nextLine();
+                        if (Letra.equalsIgnoreCase("r"))
+                            A = R;
+                        else
+                            A = convertir(Letra);
+                        Transpuesta(A);
+
 
                         break;
 
@@ -193,22 +202,22 @@ public class Main {
 
     //Hola :)
     public static void funciondeabel() {
-       int [][] matrizA ={{4,5,8},{2,6,7,},{2,4,3}};
-        int [][] matrizB ={{6,7,2},{7,3,1,},{5,1,8}};
-        int [][] matrizC ={{2,3},{8,1}};
+        int[][] matrizA = {{4, 5, 8}, {2, 6, 7,}, {2, 4, 3}};
+        int[][] matrizB = {{6, 7, 2}, {7, 3, 1,}, {5, 1, 8}};
+        int[][] matrizC = {{2, 3}, {8, 1}};
         int i, j;
         int op = 0, determinante = 0;
         int MCorden = 0;
 
         Scanner leer = new Scanner(System.in);
 
-        do{
+        do {
             System.out.println("Ingrese la matriz para obtener su determinante. ");
             System.out.println("Solo se aceptan matrices cuadradas maximas de orden 3.\n");
             System.out.println("Cual es el orden de la matriz cuadrada?: ");
             MCorden = leer.nextInt();
 
-            if(MCorden>0 && MCorden<4){
+            if (MCorden > 0 && MCorden < 4) {
                 switch (MCorden) {
                     case 1:
                         determinante = matrizB[0][0];
@@ -238,15 +247,13 @@ public class Main {
                         System.out.println("El determinante es: " + determinante);
                     default:
                 }
-            }
-            else{
+            } else {
                 System.out.println("La matriz cuadrada esta fuera del grado permitido.\n");
             }
             System.out.println("Si desea intentarlo de nuevo ingrese 1 y 0 para salir: ");
-            op=leer.nextInt();
-        }while(op != 0);
+            op = leer.nextInt();
+        } while (op != 0);
     }
-
 
 
     public static void trns() {
@@ -333,7 +340,7 @@ public class Main {
             R = new Double[FilasA][ColumnasB];
             for (int i = 0; i < A.length; i++) {
                 for (int j = 0; j < A[i].length; j++) {
-                    R[i][j]=0.0;
+                    R[i][j] = 0.0;
                 }
 
             }
@@ -346,7 +353,7 @@ public class Main {
                 for (int j = 0; j < ColumnasB; j++) {
                     // matriz A[0] para que se recorra para abajo la matriz
                     for (int k = 0; k < A[0].length; k++) {
-                        R[i][j] += (A[i][k] * B[k][j])*1.0;
+                        R[i][j] += (A[i][k] * B[k][j]) * 1.0;
                     }
                 }
             }
@@ -391,13 +398,14 @@ public class Main {
         md = new Double[m][n];
         for (int i = 0; i < m; i++) {
             for (int j = 0; j < n; j++) {
-                md[i][j] = a[i][j]+0.0;
+                md[i][j] = a[i][j] + 0.0;
 
             }
         }
         return md;
 
     }
+
     //-------------------Codigo de la Matriz Inversa
     public static void fInversa(Double Matriz[][]) {
         R = new Double[Matriz[0].length][Matriz[0].length];
@@ -414,10 +422,9 @@ public class Main {
             //Matriz IDENTIDAD
             Double identidad[][] = new Double[n][n];
             for (int i = 0; i < identidad.length; i++) {
-                for (int j = 0; j< identidad[0].length; j++){
+                for (int j = 0; j < identidad[0].length; j++) {
                     identidad[i][j] = 0.0;
                 }
-
 
 
             }
@@ -485,7 +492,7 @@ public class Main {
 
             //Matriz inversa que seria la identida
             System.out.println("-MATRIZ INVERSA ");
-            R=identidad;
+            R = identidad;
             imprimirDouble(identidad);
             System.out.println("---------------------------");
             //La respuesta va ser igual a la matriz identidad por el cambio
@@ -494,7 +501,8 @@ public class Main {
 
 
     }
-    public static void Inversa(){
+
+    public static void Inversa() {
         System.out.println("ingrese la primera matriz");
         String Letra = n.nextLine();
         if (Letra.equalsIgnoreCase("r"))
@@ -503,9 +511,6 @@ public class Main {
             A = convertir(Letra);
 
         fInversa(A);
-
-
-
 
 
     }
@@ -535,8 +540,25 @@ public class Main {
         System.out.println("-------------------------------------");
         //Multiplicacion para la divicion
         System.out.println("----Respuesta Divicion-------");
-         Multiplicacion(a,b);
+        Multiplicacion(a, b);
         System.out.println("-----------------------------------------------");
+
+    }
+
+    //--Matriz Tranzpuesta
+    public static void Transpuesta(Double a[][]) {
+        int n = a.length;
+        int m = a[0].length;
+        Double T[][] = new Double[m][n];
+        for (int x = 0; x < a.length; x++) {
+            for (int y = 0; y < a[x].length; y++) {
+                T[y][x] = a[x][y];
+            }
+        }
+        System.out.println("Transpuesta");
+        imprimirDouble(T);
+        R = T;
+
 
     }
 

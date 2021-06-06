@@ -92,6 +92,7 @@ public class Main {
 
                         break;
                     case 8:
+                        System.out.println("-----------Inversa --------");
                         Inversa();
                         break;
                     case 9:

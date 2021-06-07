@@ -27,7 +27,6 @@ class Main {
     public static int cont = 0;
     public static  Scanner sc = new Scanner(System.in);
     public static String direccion;
-    public static Double auxiliar[][];
 
     public static void Menú() {
 
@@ -86,7 +85,6 @@ class Main {
                         Multiplicacion(A, B);
                         break;
                     case 5:
-                        MatrizxNum();
 
                         break;
                     case 6:
@@ -107,7 +105,6 @@ class Main {
                         Divicion(A, B);
                         break;
                     case 7:
-                        Potencia();
 
                         break;
                     case 8:
@@ -593,57 +590,6 @@ class Main {
     public static String crga()
     {
         return "";
-    }
-    //Multiplicación de Matriz por un número
-
-    public static void MatrizxNum(){
-        System.out.println("Ingrese la Matriz");
-        String Letra = n.nextLine();
-        if (Letra.equalsIgnoreCase("r"))
-            A = R;
-        else
-            A = convertir(Letra);
-        System.out.println("Ingrese el número para multiplicar por la matriz");
-        Scanner sc = new Scanner(System.in);
-        int numero = sc.nextInt();
-        for (int i = 0; i < A.length; i++) {
-            for (int j = 0; j < A[i].length; j++) {
-                A[i][j] *= numero;
-            }
-        }
-        MostrarMxNumero(A);
-    }
-    public static void MostrarMxNumero(Double[][] A) {
-        for (int i = 0; i < A.length; i++) {
-            for (int j = 0; j < A[i].length; j++) {
-                System.out.print( A[i][j] + " \t");
-            }
-            System.out.println(" ");
-        }
-    }
-
-
-    //Potencia de Matrices
-    public static void Potencia (){
-        System.out.println("Ingrese la Matriz");
-        String Letra = n.nextLine();
-        if (Letra.equalsIgnoreCase("r"))
-            A = R;
-        else
-            A = convertir(Letra);
-        System.out.println("Ingrese el número de la potencia");
-        Scanner sc = new Scanner(System.in);
-        int potencia = sc.nextInt();
-        for (int h = 0; h<potencia; h++){
-            for (int i = 0; i < A.length; i++) {
-                for (int j = 0; j < A[i].length; j++) {
-                    Multiplicacion(A,A);
-                    Multiplicacion(R,A);
-                    R[i][j]=auxiliar[i][j];
-                }
-            }
-        }
-        MostrarMxNumero(auxiliar);
     }
 
     public static void html()

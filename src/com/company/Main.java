@@ -64,13 +64,13 @@ class Main {
                     break;
                 case 2:
                     System.out.println("SUMA");
-                    momentaneo = "SUMA"
+                    momentaneo = "SUMA";
                     suma();
 
                     break;
                 case 3:
                     System.out.println("RESTA");
-                    momentaneo="RESTA
+                    momentaneo="RESTA";
                     resta();
 
                     break;
@@ -837,7 +837,7 @@ class Main {
                 "</br>\n" +
                 "</br>\n" +
                 "<div>\n" +
-                "<h3 align=\"left\"><span class=\"hd\">"+momentaneo+""</span>\n" +
+                "<h3 align=\"left\"><span class=\"hd\">"+momentaneo+"</span>\n" +
                 "\t</div>\n" +
                 " \n" +
                 "</h3>\n" +

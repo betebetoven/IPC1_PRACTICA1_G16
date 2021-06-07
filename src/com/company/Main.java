@@ -46,7 +46,7 @@ class Main {
             System.out.println("1. Cargar Matrices");
             System.out.println("2. Sumar Matrices");
             System.out.println("3. Restar Matrices");
-            System.out.print("4. Multiplicar Matriz por Matriz ");
+            System.out.println("4. Multiplicar Matriz por Matriz ");
             System.out.println("5. Multiplicar Matriz por Número");
             System.out.println("6. Dividir Matrices");
             System.out.println("7. Potencia de Matrices");
@@ -114,6 +114,8 @@ class Main {
                     else
                         B = convertir(Letra);
                     Divicion(A, B);
+                    Respuestas(R);
+                    html();
                     break;
                 case 7:
                     Potencia();
@@ -123,9 +125,13 @@ class Main {
                 case 8:
                     System.out.println("-----------Inversa --------");
                     Inversa();
+                    Respuestas(R);
+                    html();
                     break;
                 case 9:
                     Determinante();
+                    Respuestas(R);
+                    html();
                     break;
                 case 10:
                     System.out.println("----Transpuesta -----------");
@@ -136,7 +142,8 @@ class Main {
                     else
                         A = convertir(Letra);
                     Transpuesta(A);
-
+                    Respuestas(R);
+                    html();
 
                     break;
 

@@ -348,6 +348,7 @@ class Main {
             }
         }
         System.out.println();
+        Respuestas(R);
         html();
     }
 

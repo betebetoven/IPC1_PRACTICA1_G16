@@ -14,7 +14,7 @@ class Main {
     public static void main(String[] args) {
 
 
-        guarda("C:\\Users\\Alberto\\Downloads\\p.txt");
+        guarda("C:\\Users\\Garcia\\Downloads\\p.txt");
         Menú();
 
     }
@@ -35,10 +35,10 @@ class Main {
 
         int opcion = 0;
         do {
-            //try {
-            //  System.out.println("INGRESE LA DIRECCION DE LA MATRIZ");
-            //  direccion = sc.nextLine();
-            //  guarda("C:\\Users\\Alberto\\Downloads\\p.txt");
+            try {
+              System.out.println("INGRESE LA DIRECCION DE LA MATRIZ");
+              direccion = sc.nextLine();
+              guarda("C:\\Users\\Garcia\\Downloads\\p.txt");
 
 
             System.out.println("--- MENU PRINCIPAL ---");
@@ -87,10 +87,13 @@ class Main {
                     else
                         B = convertir(Letra);
                     Multiplicacion(A, B);
+                    Respuestas(R);
+                    html();
                     break;
                 case 5:
                     MatrizxNum();
-
+                    Respuestas(R);
+                    html();
                     break;
                 case 6:
                     System.out.println("----------Divicion---------------");
@@ -111,7 +114,8 @@ class Main {
                     break;
                 case 7:
                     Potencia();
-
+                    Respuestas(R);
+                    html();
                     break;
                 case 8:
                     System.out.println("-----------Inversa --------");
@@ -140,10 +144,10 @@ class Main {
                     System.out.println("Opcion no valida");
                     break;
             }
-            // } catch (Exception e) {
+            } catch (Exception e) {
             System.out.println("Ingrese un número válido \n");
             sc = new Scanner(System.in);
-            // }
+             }
         } while (opcion != 11);
     }
 

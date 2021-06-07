@@ -6,6 +6,7 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.security.PublicKey;
 import java.sql.SQLOutput;
+import java.util.Locale;
 import java.util.Scanner;
 class Main {
 
@@ -14,7 +15,7 @@ class Main {
     public static void main(String[] args) {
 
 
-        guarda("C:\\Users\\Garcia\\Downloads\\p.txt");
+        guarda("C:\\Users\\Alberto\\Downloads\\p.txt");
         Menú();
 
     }
@@ -37,127 +38,127 @@ class Main {
         int opcion = 0;
         do {
             try {
-              System.out.println("INGRESE LA DIRECCION DE LA MATRIZ");
-              direccion = sc.nextLine();
-              guarda("C:\\Users\\Garcia\\Downloads\\p.txt");
+                System.out.println("INGRESE LA DIRECCION DE LA MATRIZ");
+                direccion = sc.nextLine();
+                guarda("C:\\Users\\Alberto\\Downloads\\p.txt");
 
 
-            System.out.println("--- MENU PRINCIPAL ---");
-            System.out.println("1. Cargar Matrices");
-            System.out.println("2. Sumar Matrices");
-            System.out.println("3. Restar Matrices");
-            System.out.println("4. Multiplicar Matriz por Matriz ");
-            System.out.println("5. Multiplicar Matriz por Número");
-            System.out.println("6. Dividir Matrices");
-            System.out.println("7. Potencia de Matrices");
-            System.out.println("8. Inversa de la Matriz");
-            System.out.println("9. Determinante de una Matriz");
-            System.out.println("10 Transpuesta de una Matriz");
-            System.out.println("11.Salir");
-            opcion = sc.nextInt();
-            switch (opcion) {
-                case 1:
+                System.out.println("--- MENU PRINCIPAL ---");
+                System.out.println("1. Cargar Matrices");
+                System.out.println("2. Sumar Matrices");
+                System.out.println("3. Restar Matrices");
+                System.out.println("4. Multiplicar Matriz por Matriz ");
+                System.out.println("5. Multiplicar Matriz por Número");
+                System.out.println("6. Dividir Matrices");
+                System.out.println("7. Potencia de Matrices");
+                System.out.println("8. Inversa de la Matriz");
+                System.out.println("9. Determinante de una Matriz");
+                System.out.println("10 Transpuesta de una Matriz");
+                System.out.println("11.Salir");
+                opcion = sc.nextInt();
+                switch (opcion) {
+                    case 1:
 
 
-                    carga();
+                        carga();
 
-                    break;
-                case 2:
-                    System.out.println("SUMA");
-                    momentaneo = "SUMA";
-                    suma();
+                        break;
+                    case 2:
+                        System.out.println("SUMA");
+                        momentaneo = "SUMA";
+                        suma();
 
-                    break;
-                case 3:
-                    System.out.println("RESTA");
-                    momentaneo="RESTA";
-                    resta();
+                        break;
+                    case 3:
+                        System.out.println("RESTA");
+                        momentaneo="RESTA";
+                        resta();
 
-                    break;
-                case 4:
-                    System.out.println("MULTIPLICACION");
-                    System.out.println("ingrese la primera matriz");
-                    String Letra = n.nextLine();
-                    if (Letra.equalsIgnoreCase("r"))
-                        A = R;
-                    else
-                        A = convertir(Letra);
+                        break;
+                    case 4:
+                        System.out.println("MULTIPLICACION");
+                        System.out.println("ingrese la primera matriz");
+                        String Letra = n.nextLine();
+                        if (Letra.equalsIgnoreCase("r"))
+                            A = R;
+                        else
+                            A = convertir(Letra);
 
-                    System.out.println("ingrese la segunda matriz");
-                    Letra = n.nextLine();
-                    if (Letra.equalsIgnoreCase("r"))
-                        B = R;
-                    else
-                        B = convertir(Letra);
-                    Multiplicacion(A, B);
-                    Respuestas(R);
-                    html();
-                    break;
-                case 5:
-                    MatrizxNum();
-                    Respuestas(R);
-                    html();
-                    break;
-                case 6:
-                    System.out.println("----------Divicion---------------");
-                    System.out.println("ingrese la segunda matriz");
-                    Letra = n.nextLine();
-                    if (Letra.equalsIgnoreCase("r"))
-                        A = R;
-                    else
-                        A = convertir(Letra);
+                        System.out.println("ingrese la segunda matriz");
+                        Letra = n.nextLine();
+                        if (Letra.equalsIgnoreCase("r"))
+                            B = R;
+                        else
+                            B = convertir(Letra);
+                        Multiplicacion(A, B);
+                        Respuestas(R);
+                        html();
+                        break;
+                    case 5:
+                        MatrizxNum();
+                        Respuestas(R);
+                        html();
+                        break;
+                    case 6:
+                        System.out.println("----------Divicion---------------");
+                        System.out.println("ingrese la segunda matriz");
+                        Letra = n.nextLine();
+                        if (Letra.equalsIgnoreCase("r"))
+                            A = R;
+                        else
+                            A = convertir(Letra);
 
-                    System.out.println("ingrese la segunda matriz");
-                    Letra = n.nextLine();
-                    if (Letra.equalsIgnoreCase("r"))
-                        B = R;
-                    else
-                        B = convertir(Letra);
-                    Divicion(A, B);
-                    Respuestas(R);
-                    html();
-                    break;
-                case 7:
-                    Potencia();
-                    Respuestas(R);
-                    html();
-                    break;
-                case 8:
-                    System.out.println("-----------Inversa --------");
-                    Inversa();
-                    Respuestas(R);
-                    html();
-                    break;
-                case 9:
-                    Determinante();
-                    Respuestas(R);
-                    html();
-                    break;
-                case 10:
-                    System.out.println("----Transpuesta -----------");
-                    System.out.println("ingrese la primera matriz");
-                    Letra = n.nextLine();
-                    if (Letra.equalsIgnoreCase("r"))
-                        A = R;
-                    else
-                        A = convertir(Letra);
-                    Transpuesta(A);
-                    Respuestas(R);
-                    html();
+                        System.out.println("ingrese la segunda matriz");
+                        Letra = n.nextLine();
+                        if (Letra.equalsIgnoreCase("r"))
+                            B = R;
+                        else
+                            B = convertir(Letra);
+                        Divicion(A, B);
+                        Respuestas(R);
+                        html();
+                        break;
+                    case 7:
+                        Potencia();
+                        Respuestas(R);
+                        html();
+                        break;
+                    case 8:
+                        System.out.println("-----------Inversa --------");
+                        Inversa();
+                        Respuestas(R);
+                        html();
+                        break;
+                    case 9:
+                        Determinante();
+                        Respuestas(R);
+                        html();
+                        break;
+                    case 10:
+                        System.out.println("----Transpuesta -----------");
+                        System.out.println("ingrese la primera matriz");
+                        Letra = n.nextLine();
+                        if (Letra.equalsIgnoreCase("r"))
+                            A = R;
+                        else
+                            A = convertir(Letra);
+                        Transpuesta(A);
+                        Respuestas(R);
+                        html();
 
-                    break;
+                        break;
 
-                case 11:
-                    System.out.println("Gracias por utilizar el programa");
-                    break;
-                default:
-                    System.out.println("Opcion no valida");
-                    break;
-            }
+                    case 11:
+                        System.out.println("Gracias por utilizar el programa");
+                        break;
+                    default:
+                        System.out.println("Opcion no valida");
+                        break;
+                }
             } catch (Exception e) {
-            System.out.println("Ingrese un número válido \n");
-            sc = new Scanner(System.in);
-             }
+                System.out.println("Ingrese un número válido \n");
+                sc = new Scanner(System.in);
+            }
         } while (opcion != 11);
     }
 
@@ -213,8 +214,11 @@ class Main {
         int p = 0;
         for (int i = 0; i < 26; i++)
             try {
-                if (todoo[i][0].equalsIgnoreCase(g))
-                    p = i;
+                System.out.println(todoo[i][0]);
+                if (todoo[i][0].contains(g.toUpperCase(Locale.ROOT)))
+                {   p = i;
+                    break;
+                }
             } catch (Exception e) {
                 i = 26;
             }

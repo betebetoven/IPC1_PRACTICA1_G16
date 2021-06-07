@@ -317,6 +317,7 @@ class Main {
 
         //llamando a la tabla
         //Inicializacion de la tabla
+        RR = "";
 
         for (int i = 0; i < R.length; i++) {
             //recorriendo filas

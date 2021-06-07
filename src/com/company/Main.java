@@ -33,6 +33,7 @@ class Main {
     public static String RR="";
     public static String momentaneo;
 
+    // ******CÓDIGO DEL MENÚ******
     public static void Menú() {
 
         int opcion = 0;
@@ -40,8 +41,7 @@ class Main {
             try {
                 System.out.println("INGRESE LA DIRECCION DE LA MATRIZ");
                 direccion = sc.nextLine();
-                guarda("C:\\Users\\Alberto\\Downloads\\p.txt");
-
+                guarda("C:\\Users\\Garcia\\Downloads\\p.txt");
 
                 System.out.println("--- MENU PRINCIPAL ---");
                 System.out.println("1. Cargar Matrices");
@@ -55,49 +55,49 @@ class Main {
                 System.out.println("9. Determinante de una Matriz");
                 System.out.println("10 Transpuesta de una Matriz");
                 System.out.println("11.Salir");
+                //LEE LA OPCIÓN QUE ELIGE EL USUARIO
                 opcion = sc.nextInt();
                 switch (opcion) {
                     case 1:
-
-
                         carga();
-
                         break;
                     case 2:
                         System.out.println("SUMA");
                         momentaneo = "SUMA";
                         suma();
-
                         break;
                     case 3:
                         System.out.println("RESTA");
                         momentaneo="RESTA";
                         resta();
-
                         break;
                     case 4:
-                        System.out.println("MULTIPLICACION");
-                        System.out.println("ingrese la primera matriz");
+                        System.out.println("*****MULTIPLICACION*****");
+                        System.out.println("Ingrese la Primera matriz");
                         String Letra = n.nextLine();
                         if (Letra.equalsIgnoreCase("r"))
                             A = R;
                         else
                             A = convertir(Letra);
 
-                        System.out.println("ingrese la segunda matriz");
+                        System.out.println("Ingrese la Segunda matriz");
                         Letra = n.nextLine();
                         if (Letra.equalsIgnoreCase("r"))
                             B = R;
                         else
                             B = convertir(Letra);
+                        System.out.println("*****Multiplicación de Matriz por Matriz*****");
+                        momentaneo = "MULTIPLICACIÓN DE MATRIZ POR MATRIZ";
                         Multiplicacion(A, B);
                         Respuestas(R);
                         html();
                         break;
                     case 5:
+                        System.out.println("*****MULTIPLICACIÓN DE UNA MATRIZ POR UN NÚMERO******");
+                        momentaneo = "MULTIPLICACIÓN DE UNA MATRIZ POR UN NÚMERO";
                         MatrizxNum();
                         Respuestas(R);
-                        html();
+                        htmlparauno();
                         break;
                     case 6:
                         System.out.println("----------Divicion---------------");
@@ -114,25 +114,31 @@ class Main {
                             B = R;
                         else
                             B = convertir(Letra);
+                        momentaneo = "DIVISIÓN";
                         Divicion(A, B);
                         Respuestas(R);
                         html();
                         break;
                     case 7:
+                        System.out.println("*****POTENCIA DE UNA MATRIZ*****");
+                        momentaneo = "POTENCIA DE UNA MATRIZ";
                         Potencia();
                         Respuestas(R);
-                        html();
+                        htmlparauno();
                         break;
                     case 8:
                         System.out.println("-----------Inversa --------");
+                        momentaneo = "INVERSA";
                         Inversa();
                         Respuestas(R);
-                        html();
+                        htmlparauno();
                         break;
                     case 9:
+                        System.out.println("*****DETEMINANTE DE UNA MATRIZ******");
+                        momentaneo = "DETERMINANTE";
                         Determinante();
                         Respuestas(R);
-                        html();
+                        htmlparauno();
                         break;
                     case 10:
                         System.out.println("----Transpuesta -----------");
@@ -142,12 +148,11 @@ class Main {
                             A = R;
                         else
                             A = convertir(Letra);
+                        momentaneo = "TRANSPUESTA DE LA MATRIZ";
                         Transpuesta(A);
                         Respuestas(R);
-                        html();
-
+                        htmlparauno();
                         break;
-
                     case 11:
                         System.out.println("Gracias por utilizar el programa");
                         break;
@@ -260,10 +265,11 @@ class Main {
         return prd;
     }
 
-    //Hola :)
+
+    //CÓDIGO DEL DETERMINANTE
     public static void Determinante() {
         double determinante = 0;
-        System.out.println("ingrese la matriz cuadrada no mayor de orden 3");
+        System.out.println("Ingrese la Matriz");
         String Letra = n.nextLine();
         if (Letra.equalsIgnoreCase("r")) {
             A = R;
@@ -271,7 +277,7 @@ class Main {
             A = convertir(Letra);
         }
         if (A.length > 3 && A[0].length > 3 || A.length < 1 && A[0].length < 1) {
-            System.out.println("ERROR: La matriz no es del grado permitido. ");
+            System.out.println("La matriz no tiene las dimensiones válidas ");
         } else {
             if (A.length == 3 && A[0].length == 3) {
                 determinante = ((A[0][0]) * (A[1][1]) * (A[2][2]) + (A[1][0]) * (A[2][1]) *
@@ -381,11 +387,8 @@ class Main {
     }
 
     public static void Multiplicacion(Double A[][], Double B[][]) {
-        //CONDICIONALES
-        //A DEBE TENER EL MISMO NUMERO DE COLUMNAS QUE B DE FILAS
 
         //COLUMNAS DE A
-
 
         int FilasA = A.length;
         int ColumnasA = 0;
@@ -396,6 +399,7 @@ class Main {
         }
         System.out.println("A = " + FilasA + " X " + ColumnasA);
 
+        //COLUMNAS DE B
         int filasB = B.length;
         int ColumnasB = 0;
 
@@ -406,6 +410,8 @@ class Main {
 
         }
         System.out.println("B = " + filasB + " X " + ColumnasB);
+        //CONDICIONALES
+        //A DEBE TENER EL MISMO NUMERO DE COLUMNAS QUE B DE FILAS
         if (ColumnasA != filasB) {
             System.out.println("Numero de Columnas de A"
                     + " No es IGUAL a Numero de Filas de B");
@@ -421,28 +427,26 @@ class Main {
 
             }
 
-
             //Multiplicacion
-            //Recorremos las Filas de la Matriz
+            //RECORREMOS LAS FILAS DE LA MATRIZ
             for (int i = 0; i < FilasA; i++) {
-                //Recorremos las Columas de la Matriz
+                //RECORREMOS LAS COLUMNAS DE LA MATRIZ
                 for (int j = 0; j < ColumnasB; j++) {
-                    // matriz A[0] para que se recorra para abajo la matriz
+                    // CORRE LA MATRIZ HACIA ABAJO
                     for (int k = 0; k < A[0].length; k++) {
                         R[i][j] += (A[i][k] * B[k][j]) * 1.0;
                     }
                 }
             }
             System.out.println("*-------------------------");
-            System.out.println("Resultado ");
+            System.out.println("Resultado de la Multiplicación de Matrices ");
             imprimir(R);
             System.out.println("*-------------------------");
 
         }
 
     }
-
-    //Imprimir Matrices
+    //IMPRIMIR MATRICES
     public static void imprimir(Double A[][]) {
         for (int i = 0; i < A.length; i++) {
             for (int j = 0; j < A[i].length; j++) {
@@ -461,7 +465,7 @@ class Main {
         }
     }
 
-    ///pasa matriz int a double
+    ///CONVIERTE MATRIZ A DOUBLE
     public static Double[][] Int_a_Double(int a[][]) {
         Double md[][];
         int m = a.length;
@@ -645,23 +649,27 @@ class Main {
 
     }
 
-    //Multiplicación de Matriz por un número
+    //MULTIPLICACIÓN DE UNA MATRIZ POR UN NUMERO
 
     public static void MatrizxNum(){
+        //LEE LA LETRA PARA INGRESAR LA MATRIZ
         System.out.println("Ingrese la Matriz");
         String Letra = n.nextLine();
         if (Letra.equalsIgnoreCase("r"))
             A = R;
         else
             A = convertir(Letra);
+        //LEE EL NUMERO PARA MULTIPLICAR LA MATRIZ
         System.out.println("Ingrese el número para multiplicar por la matriz");
         Scanner sc = new Scanner(System.in);
         int numero = sc.nextInt();
+        //RECORRE LA MATRIZ MULTIPLICANDOLA POR EL NÚMERO
         for (int i = 0; i < A.length; i++) {
             for (int j = 0; j < A[i].length; j++) {
                 A[i][j] *= numero;
             }
         }
+        System.out.println("Resultado de la Multiplicación por un numero");
         MostrarMxNumero(A);
     }
     public static void MostrarMxNumero(Double[][] A) {
@@ -674,7 +682,7 @@ class Main {
     }
 
 
-    //Potencia de Matrices
+    //POTENCIA DE MATRICES
     public static void Potencia (){
         System.out.println("Ingrese la Matriz");
         String Letra = n.nextLine();
@@ -682,18 +690,24 @@ class Main {
             A = R;
         else
             A = convertir(Letra);
+        //LEE LA POTENCIA A ELEVAR LA MATRIZ
         System.out.println("Ingrese el número de la potencia");
         Scanner sc = new Scanner(System.in);
         int potencia = sc.nextInt();
+        //EL PRIMER FOR SE DETIENE HASTA LLEGAR AL NUMERO DE LA POTENCIA INGRESADA
         for (int h = 0; h<potencia; h++){
             for (int i = 0; i < A.length; i++) {
                 for (int j = 0; j < A[i].length; j++) {
+                    //REALIZA LA PRIMERA MULTIPLICA DE LA MATRIZ A*A
                     Multiplicacion(A,A);
+                    //AGREGA EL RESULTADO DE LA MULTIPLICACIÓN ANTERIOR A LA MATRIZ R Y LA MULTIPLICA POR A
                     Multiplicacion(R,A);
+                    //LA MATRIZ AUXILIAR RECIBE EL VALOR DE LA MATRIZ R CADA VEZ QUE CAMBIA EN EL CICLO
                     R[i][j]=auxiliar[i][j];
                 }
             }
         }
+        System.out.println("Resultado de la Potencia ");
         MostrarMxNumero(auxiliar);
     }
 

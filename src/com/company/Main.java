@@ -278,8 +278,11 @@ class Main {
     public static void trns() {
         System.out.println("ingrese la primera matriz");
         String Letra = n.nextLine();
-        if (Letra.equalsIgnoreCase("r"))
+        if (Letra.equalsIgnoreCase("r")) {
             A = R;
+            Respuestas(R);
+            As = RR;
+        }
         else {
             A = convertir(Letra);
             As = temp;
@@ -288,8 +291,13 @@ class Main {
 
         System.out.println("ingrese la segunda matriz");
         Letra = n.nextLine();
-        if (Letra.equalsIgnoreCase("r"))
+        if (Letra.equalsIgnoreCase("r")) {
+
             B = R;
+            Respuestas(R);
+            Bs = RR;
+
+        }
         else {
             B = convertir(Letra);
             Bs = temp;

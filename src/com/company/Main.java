@@ -30,6 +30,7 @@ class Main {
     public static String direccion;
     public static Double auxiliar[][];
     public static String RR="";
+    public static String momentaneo;
 
     public static void Menú() {
 
@@ -63,11 +64,13 @@ class Main {
                     break;
                 case 2:
                     System.out.println("SUMA");
+                    momentaneo = "SUMA"
                     suma();
 
                     break;
                 case 3:
                     System.out.println("RESTA");
+                    momentaneo="RESTA
                     resta();
 
                     break;
@@ -318,6 +321,7 @@ class Main {
             }
         }
         System.out.println();
+
         Respuestas(R);
         html();
     }
@@ -833,7 +837,7 @@ class Main {
                 "</br>\n" +
                 "</br>\n" +
                 "<div>\n" +
-                "<h3 align=\"left\"><span class=\"hd\">PROGRAMA</span>\n" +
+                "<h3 align=\"left\"><span class=\"hd\">"+momentaneo+""</span>\n" +
                 "\t</div>\n" +
                 " \n" +
                 "</h3>\n" +
